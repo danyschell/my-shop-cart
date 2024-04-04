@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
-import { products } from '../products';
+//import { products } from '../products';
+import { Product, products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,8 +9,17 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+  product: Product | undefined;
   products = [...products];
 
+  constructor(
+    private cartService: CartService
+  ) { }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+  }
   share() {
     window.alert('The product has been shared!');
   }

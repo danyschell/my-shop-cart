@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import { HttpClient } from '@angular/common/http';
->>>>>>> 73de924 (First commit)
 import { Product } from './products';
 import { Injectable } from '@angular/core';
 /* . . . */
@@ -9,18 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CartService {
-<<<<<<< HEAD
   items: Product[] = [];
 /* . . . */
-=======
-  
-  items: Product[] = [];
-  
-  constructor(
-    private http: HttpClient
-  ) {}
-
->>>>>>> 73de924 (First commit)
 
   addToCart(product: Product) {
     this.items.push(product);
@@ -34,12 +20,5 @@ export class CartService {
     this.items = [];
     return this.items;
   }
-<<<<<<< HEAD
 /* . . . */
-=======
-
-  getShippingPrices() {
-    return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
-  }
->>>>>>> 73de924 (First commit)
 }
