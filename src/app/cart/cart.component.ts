@@ -22,6 +22,11 @@ export class CartComponent {
     private formBuilder: FormBuilder,
   ) { }
 
+  removeFromCart(index: number) {
+    this.cartService.removeFromCart(index);
+    window.alert('Your product has been removed from the cart!');
+  }
+
   onSubmit(): void {
     // Process checkout data here
     this.items = this.cartService.clearCart();

@@ -20,6 +20,12 @@ export class ProductListComponent {
     this.cartService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }
+
+  removeFromCart(index: number) {
+    this.cartService.removeFromCart(index);
+    window.alert('Your product has been removed from the cart!');
+  }
+  
   share() {
     window.alert('The product has been shared!');
   }

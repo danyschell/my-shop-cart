@@ -1,6 +1,6 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; let i = index">
 
   <h3>
     <a  [title]="product.name + 'details'"
@@ -16,6 +16,12 @@
   <button type="button" (click)="addToCart(product)">
     Buy
   </button>
+  &nbsp;
+  
+  <button type="button" (click)="removeFromCart(i)">
+    Remove
+  </button>
+  
   <br/><br/>
   <button type="button" (click)="share()">
     Share

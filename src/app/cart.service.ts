@@ -10,6 +10,11 @@ export class CartService {
 
   addToCart(product: Product) {
     this.items.push(product);
+    
+  }
+
+  removeFromCart(index: number) {
+    this.items.splice(index, 1);
   }
 
   getItems() {
