@@ -16,17 +16,7 @@
   <button type="button" (click)="addToCart(product)">
     Buy
   </button>
-  &nbsp;
-  
-  <button type="button" (click)="removeFromCart(i)">
-    Remove
-  </button>
-  
-  <br/><br/>
-  <button type="button" (click)="share()">
-    Share
-  </button>
-  
+  &nbsp;  
   <app-product-alerts
     [product]="product" 
     (notify)="onNotify()">
