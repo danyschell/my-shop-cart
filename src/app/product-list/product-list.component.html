@@ -1,11 +1,15 @@
 <h2>Products</h2>
 
+<button mat-raised-button color="primary"
+    matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+  Action
+</button>
+
 <div *ngFor="let product of products; let i = index">
 
   <h3>
-    <a  [title]="product.name + 'details'"
-        [routerLink]="['/products', product.id]">
-      {{ product.name }}
+    <a  [title]="product.name + 'details'">
+          {{ product.name }}
     </a>
       
   </h3>
@@ -16,11 +20,7 @@
   <button type="button" (click)="addToCart(product)">
     Buy
   </button>
-  &nbsp;  
-  <app-product-alerts
-    [product]="product" 
-    (notify)="onNotify()">
-  </app-product-alerts>
+
 
 </div>
 

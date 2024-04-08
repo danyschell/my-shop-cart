@@ -11,6 +11,11 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+import { MyAddressComponent } from './my-address/my-address.component';
+import { MaterialModule } from './material.module';
+
 
 
 @NgModule({
@@ -23,7 +28,9 @@ import { ShippingComponent } from './shipping/shipping.component';
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
-    ])
+    ]),
+    MaterialModule,
+  
   ],
   declarations: [
     AppComponent,
@@ -33,9 +40,13 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
+    MyAddressComponent,
   ],
   bootstrap: [
     AppComponent
+  ],
+  providers: [
+    provideAnimationsAsync()
   ]
 })
 export class AppModule { }
