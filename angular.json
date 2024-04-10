@@ -3,8 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular.io-example": {
+    "my-shop-cart": {
       "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -12,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/my-shop-cart",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -22,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -55,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular.io-example:build:production"
+              "buildTarget": "my-shop-cart:build:production"
             },
             "development": {
-              "buildTarget": "angular.io-example:build:development"
+              "buildTarget": "my-shop-cart:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -66,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular.io-example:build"
+            "buildTarget": "my-shop-cart:build"
           }
         },
         "test": {
@@ -79,7 +84,7 @@
               "src/assets"
             ],
             "styles": [
-              
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -89,11 +94,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular.io-example:serve"
+            "devServerTarget": "my-shop-cart:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular.io-example:serve:production"
+              "devServerTarget": "my-shop-cart:serve:production"
             }
           }
         },
